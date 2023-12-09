@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function getComputerChoice()
+        {
+         const choice = Math.random();
+
+         if(choice < 0.33)
+           {
+            return "rock";
+           }
+            else if(choice > 0.66)
+                {
+                    return "paper";
+                }
+                 else 
+                    {
+                        return "scissors";
+                    }
+            
+        }
+         
+        const playerSelection = prompt("rock, paper or scissors").toLowerCase;
+
+        if (playerSelection === computerSelection)
+           {
+            console.log("IT'S A TIE!! WE GO AGAIN");
+
+            playerSelection = prompt("rock, paper or scissors");
+             return playerSelection;
+           }
+
+        function rps(playerSelection,computerSelection)
+          {
+             
+
+          }
+    </script>
+</body>
+</html>
