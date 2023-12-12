@@ -34,9 +34,9 @@
         
         
           
-          function playRound(playerSelection, computerSelection)
+          function playRound(str, computerSelection)
            {
-              
+              playerSelection = str;
 
             if (playerSelection === computerSelection)
            {
@@ -87,39 +87,37 @@
                                  }
 
 
-          
-
-          
-             
-
            }
-           
-           
+          
 
-console.log(playRound(playerSelection, computerSelection));
         
            function game()
            {
+              // vaiables 
             var playerSelection = null;
-            var computerSelection = null;
+            var computerSelection = getComputerChoice();
 
-             for(var i = 0; i < 5; i++)
-                {
-                    playerSelection = prompt("rock, paper or scissors?");
-                    computerSelection = getComputerChoice();
-                    playRound(playerSelection, computerSelection);
-                }
-                 
-                if(you > cpu)
-                 {
-                    return "congratulations you won " + you + "-"+ cpu;
-                 }
-                  else
-                    {
-                        return "unfortunately you lost "+ cpu+"-"+you;
-                    }
+             // button creation
+           const rock = document.createElement('button');
+           const  paper= document.createElement('button');
+           const scissors = document.createElement('button');
+
+           //id addition
+           rock.setAttribute('id','rock');
+           paper.setAttribute('id','paper');
+           scissors.setAttribute('id','scissors');
+
+           //event listners
+           rock.addEventListener('click', playRound('rock', computerSelection));
+           paper.addEventListener('click', playRound('paper', computerSelection));
+           scissors.addEventListener('click', playRound('scissors', computerSelection));
+
+
+
+
 
            }
+           console.log(game());
  
     </script>
 </body>
