@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     <script>
@@ -30,20 +30,15 @@
 
         var cpu = 0;
         var you = 0;
-        
-
-         const console = document.createElement('p');
-        
-        
           
-          function playRound(str, computerSelection)
+          function playRound(playerSelection, computerSelection)
            {
-              playerSelection = str;
+             
 
             if (playerSelection === computerSelection)
            {
              
-                console.textContent = "ITS A TIE! WE GO AGAIN! The score is, YOU " + you + "-" +cpu +" CPU";
+                result.textContent = "ITS A TIE! WE GO AGAIN! The score is, YOU " + you + "-" +cpu +" CPU";
                 
 
            }
@@ -102,8 +97,12 @@
 
            }
 
-           //body creation
-           const body = document.createElement('div');
+                //body creation
+                const body = document.createElement('div');
+           document.body.appendChild(body);
+
+            //results div
+            const result= document.createElement('div');
            
            // button creation
             const rock = document.createElement('button');
@@ -112,41 +111,26 @@
            rock.textContent = 'rock';
            paper.textContent = 'paper';
            scissors.textContent = 'scissors';
+           result.textContent = 'result';
 
-           //id addition
+           //Id addition
            rock.setAttribute('id','rock');
            paper.setAttribute('id','paper');
            scissors.setAttribute('id','scissors');
-            //results div
-            const result= document.createElement('div');
-
+           
+            // Append buttons to the body
             document.body.appendChild(rock);
             document.body.appendChild(paper);
             document.body.appendChild(scissors);
             document.body.appendChild(result);
 
               //event listners
-           rock.addEventListener('click', () => playRound('rock', computerSelection));
-           paper.addEventListener('click', () => playRound('paper', computerSelection));
-           scissors.addEventListener('click',() => playRound('scissors', computerSelection));
+           rock.addEventListener('click', () => playRound('rock',getComputerChoice()));
+           paper.addEventListener('click', () => playRound('paper', getComputerChoice()));
+           scissors.addEventListener('click',() => playRound('scissors', getComputerChoice()));
 
-        
-           function game()
-           {
-           
 
-             do
-              {
-                    // vaiables 
-            var playerSelection = null;
-            var computerSelection = getComputerChoice();
-
-            
-
-              }while(cpu < 5 || you < 5);
-           }
-           
- 
+      
     </script>
 </body>
 </html>
